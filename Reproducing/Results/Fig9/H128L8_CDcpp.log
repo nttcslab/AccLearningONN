@@ -1,0 +1,239 @@
+ATen/Parallel:
+	at::get_num_threads() : 8
+	at::get_num_interop_threads() : 8
+OpenMP 201511 (a.k.a. OpenMP 4.5)
+	omp_get_max_threads() : 8
+Intel(R) Math Kernel Library Version 2020.0.2 Product Build 20200624 for Intel(R) 64 architecture applications
+	mkl_get_max_threads() : 8
+Intel(R) MKL-DNN v1.6.0 (Git Hash 5ef631a030a6f73131c77892041042805a06064f)
+std::thread::hardware_concurrency() : 16
+Environment variables:
+	OMP_NUM_THREADS : [not set]
+	MKL_NUM_THREADS : [not set]
+ATen parallel backend: OpenMP
+
+Namespace(batch_size=100, epochs=20, lr_act=1e-05, lr_out=0.01, lr_rnn=0.0001, 
+num_hidden_units=128, num_infeatures=1, 
+num_finelayers=8, num_layers=4, num_threads=8, 
+outfile='../../Log/Fig9/H128L8_CDcpp.log', profile=False, seed=202104160)
+epoch= 1
+elapsed_time: 132.92  processed: 10.0%  loss=1.124553  acc=0.63967
+elapsed_time: 266.46  processed: 20.0%  loss=0.891882  acc=0.72033
+elapsed_time: 400.63  processed: 30.0%  loss=0.780630  acc=0.75672
+elapsed_time: 535.07  processed: 40.0%  loss=0.717785  acc=0.77687
+elapsed_time: 669.75  processed: 50.0%  loss=0.677129  acc=0.78953
+elapsed_time: 804.70  processed: 60.0%  loss=0.649979  acc=0.79867
+elapsed_time: 939.75  processed: 70.0%  loss=0.625091  acc=0.80676
+elapsed_time: 1074.83  processed: 80.0%  loss=0.604564  acc=0.81346
+elapsed_time: 1209.86  processed: 90.0%  loss=0.587112  acc=0.81889
+elapsed_time: 1344.79  processed: 100.0%  loss=0.575139  acc=0.82295
+epoch= 2
+elapsed_time: 1479.79  processed: 10.0%  loss=0.451805  acc=0.86133
+elapsed_time: 1614.80  processed: 20.0%  loss=0.443191  acc=0.86558
+elapsed_time: 1749.66  processed: 30.0%  loss=0.434267  acc=0.86872
+elapsed_time: 1884.65  processed: 40.0%  loss=0.426983  acc=0.87225
+elapsed_time: 2019.60  processed: 50.0%  loss=0.431040  acc=0.87113
+elapsed_time: 2154.47  processed: 60.0%  loss=0.433694  acc=0.86958
+elapsed_time: 2289.27  processed: 70.0%  loss=0.431728  acc=0.86988
+elapsed_time: 2424.19  processed: 80.0%  loss=0.427588  acc=0.87054
+elapsed_time: 2558.99  processed: 90.0%  loss=0.425543  acc=0.87080
+elapsed_time: 2693.92  processed: 100.0%  loss=0.424209  acc=0.87118
+epoch= 3
+elapsed_time: 2828.94  processed: 10.0%  loss=0.413472  acc=0.87750
+elapsed_time: 2964.42  processed: 20.0%  loss=0.397565  acc=0.88200
+elapsed_time: 3099.67  processed: 30.0%  loss=0.397767  acc=0.87989
+elapsed_time: 3234.76  processed: 40.0%  loss=0.399305  acc=0.87950
+elapsed_time: 3369.73  processed: 50.0%  loss=0.397928  acc=0.87897
+elapsed_time: 3504.61  processed: 60.0%  loss=0.393636  acc=0.87950
+elapsed_time: 3639.47  processed: 70.0%  loss=0.391382  acc=0.88050
+elapsed_time: 3774.09  processed: 80.0%  loss=0.387864  acc=0.88135
+elapsed_time: 3908.69  processed: 90.0%  loss=0.385075  acc=0.88196
+elapsed_time: 4043.39  processed: 100.0%  loss=0.385027  acc=0.88168
+epoch= 4
+elapsed_time: 4178.16  processed: 10.0%  loss=0.382431  acc=0.87950
+elapsed_time: 4312.87  processed: 20.0%  loss=0.382797  acc=0.88258
+elapsed_time: 4447.55  processed: 30.0%  loss=0.367768  acc=0.88628
+elapsed_time: 4582.44  processed: 40.0%  loss=0.371250  acc=0.88529
+elapsed_time: 4717.34  processed: 50.0%  loss=0.365065  acc=0.88657
+elapsed_time: 4852.18  processed: 60.0%  loss=0.367009  acc=0.88617
+elapsed_time: 4986.59  processed: 70.0%  loss=0.365173  acc=0.88729
+elapsed_time: 5121.01  processed: 80.0%  loss=0.366971  acc=0.88675
+elapsed_time: 5255.56  processed: 90.0%  loss=0.365828  acc=0.88744
+elapsed_time: 5390.04  processed: 100.0%  loss=0.363672  acc=0.88812
+epoch= 5
+elapsed_time: 5524.51  processed: 10.0%  loss=0.343166  acc=0.89400
+elapsed_time: 5658.75  processed: 20.0%  loss=0.346850  acc=0.89208
+elapsed_time: 5793.05  processed: 30.0%  loss=0.343252  acc=0.89411
+elapsed_time: 5927.38  processed: 40.0%  loss=0.351904  acc=0.89287
+elapsed_time: 6061.74  processed: 50.0%  loss=0.353563  acc=0.89210
+elapsed_time: 6195.93  processed: 60.0%  loss=0.347663  acc=0.89436
+elapsed_time: 6330.13  processed: 70.0%  loss=0.345160  acc=0.89526
+elapsed_time: 6464.56  processed: 80.0%  loss=0.347474  acc=0.89502
+elapsed_time: 6598.98  processed: 90.0%  loss=0.348911  acc=0.89439
+elapsed_time: 6733.46  processed: 100.0%  loss=0.348712  acc=0.89372
+epoch= 6
+elapsed_time: 6867.89  processed: 10.0%  loss=0.336723  acc=0.89500
+elapsed_time: 7002.18  processed: 20.0%  loss=0.333351  acc=0.89692
+elapsed_time: 7136.48  processed: 30.0%  loss=0.329035  acc=0.89833
+elapsed_time: 7270.74  processed: 40.0%  loss=0.329493  acc=0.89875
+elapsed_time: 7405.02  processed: 50.0%  loss=0.333923  acc=0.89803
+elapsed_time: 7539.30  processed: 60.0%  loss=0.344159  acc=0.89528
+elapsed_time: 7673.69  processed: 70.0%  loss=0.343565  acc=0.89586
+elapsed_time: 7808.15  processed: 80.0%  loss=0.348611  acc=0.89435
+elapsed_time: 7942.50  processed: 90.0%  loss=0.346482  acc=0.89507
+elapsed_time: 8076.80  processed: 100.0%  loss=0.342156  acc=0.89623
+epoch= 7
+elapsed_time: 8211.17  processed: 10.0%  loss=0.328420  acc=0.89867
+elapsed_time: 8345.50  processed: 20.0%  loss=0.342592  acc=0.89533
+elapsed_time: 8479.89  processed: 30.0%  loss=0.333169  acc=0.89678
+elapsed_time: 8614.23  processed: 40.0%  loss=0.338337  acc=0.89521
+elapsed_time: 8748.54  processed: 50.0%  loss=0.337257  acc=0.89623
+elapsed_time: 8882.96  processed: 60.0%  loss=0.336941  acc=0.89633
+elapsed_time: 9017.47  processed: 70.0%  loss=0.333028  acc=0.89788
+elapsed_time: 9151.85  processed: 80.0%  loss=0.337538  acc=0.89573
+elapsed_time: 9286.25  processed: 90.0%  loss=0.333570  acc=0.89737
+elapsed_time: 9420.57  processed: 100.0%  loss=0.334309  acc=0.89723
+epoch= 8
+elapsed_time: 9555.01  processed: 10.0%  loss=0.332176  acc=0.89517
+elapsed_time: 9689.30  processed: 20.0%  loss=0.314084  acc=0.90308
+elapsed_time: 9823.55  processed: 30.0%  loss=0.316936  acc=0.90172
+elapsed_time: 9958.25  processed: 40.0%  loss=0.321382  acc=0.90129
+elapsed_time: 10092.67  processed: 50.0%  loss=0.320500  acc=0.90183
+elapsed_time: 10227.26  processed: 60.0%  loss=0.328619  acc=0.89967
+elapsed_time: 10361.51  processed: 70.0%  loss=0.323045  acc=0.90095
+elapsed_time: 10495.89  processed: 80.0%  loss=0.322089  acc=0.90098
+elapsed_time: 10630.47  processed: 90.0%  loss=0.322672  acc=0.90150
+elapsed_time: 10764.89  processed: 100.0%  loss=0.323094  acc=0.90147
+epoch= 9
+elapsed_time: 10899.05  processed: 10.0%  loss=0.300169  acc=0.90750
+elapsed_time: 11033.33  processed: 20.0%  loss=0.302819  acc=0.90550
+elapsed_time: 11167.53  processed: 30.0%  loss=0.330982  acc=0.89833
+elapsed_time: 11301.69  processed: 40.0%  loss=0.319591  acc=0.90275
+elapsed_time: 11435.91  processed: 50.0%  loss=0.317098  acc=0.90333
+elapsed_time: 11570.13  processed: 60.0%  loss=0.320524  acc=0.90311
+elapsed_time: 11704.18  processed: 70.0%  loss=0.319521  acc=0.90295
+elapsed_time: 11838.37  processed: 80.0%  loss=0.317030  acc=0.90387
+elapsed_time: 11972.47  processed: 90.0%  loss=0.318931  acc=0.90320
+elapsed_time: 12106.69  processed: 100.0%  loss=0.317859  acc=0.90343
+epoch= 10
+elapsed_time: 12240.98  processed: 10.0%  loss=0.288407  acc=0.91317
+elapsed_time: 12375.11  processed: 20.0%  loss=0.315952  acc=0.90300
+elapsed_time: 12509.37  processed: 30.0%  loss=0.306731  acc=0.90561
+elapsed_time: 12643.65  processed: 40.0%  loss=0.307935  acc=0.90446
+elapsed_time: 12777.99  processed: 50.0%  loss=0.308998  acc=0.90487
+elapsed_time: 12912.23  processed: 60.0%  loss=0.309778  acc=0.90492
+elapsed_time: 13046.44  processed: 70.0%  loss=0.308195  acc=0.90514
+elapsed_time: 13180.56  processed: 80.0%  loss=0.307550  acc=0.90548
+elapsed_time: 13314.85  processed: 90.0%  loss=0.308932  acc=0.90522
+elapsed_time: 13449.10  processed: 100.0%  loss=0.308474  acc=0.90512
+epoch= 11
+elapsed_time: 13583.34  processed: 10.0%  loss=0.306850  acc=0.91100
+elapsed_time: 13717.47  processed: 20.0%  loss=0.318400  acc=0.90550
+elapsed_time: 13851.36  processed: 30.0%  loss=0.306819  acc=0.90817
+elapsed_time: 13985.39  processed: 40.0%  loss=0.306621  acc=0.90754
+elapsed_time: 14119.68  processed: 50.0%  loss=0.308308  acc=0.90740
+elapsed_time: 14253.86  processed: 60.0%  loss=0.305791  acc=0.90844
+elapsed_time: 14388.01  processed: 70.0%  loss=0.303605  acc=0.90814
+elapsed_time: 14522.17  processed: 80.0%  loss=0.301749  acc=0.90842
+elapsed_time: 14656.55  processed: 90.0%  loss=0.310438  acc=0.90554
+elapsed_time: 14791.01  processed: 100.0%  loss=0.309192  acc=0.90585
+epoch= 12
+elapsed_time: 14925.10  processed: 10.0%  loss=0.325593  acc=0.89650
+elapsed_time: 15059.28  processed: 20.0%  loss=0.305789  acc=0.90492
+elapsed_time: 15193.57  processed: 30.0%  loss=0.307556  acc=0.90494
+elapsed_time: 15327.80  processed: 40.0%  loss=0.313627  acc=0.90383
+elapsed_time: 15462.10  processed: 50.0%  loss=0.307979  acc=0.90630
+elapsed_time: 15596.27  processed: 60.0%  loss=0.317176  acc=0.90314
+elapsed_time: 15730.56  processed: 70.0%  loss=0.311020  acc=0.90481
+elapsed_time: 15864.80  processed: 80.0%  loss=0.305921  acc=0.90648
+elapsed_time: 15999.00  processed: 90.0%  loss=0.305547  acc=0.90713
+elapsed_time: 16133.18  processed: 100.0%  loss=0.327138  acc=0.90197
+epoch= 13
+elapsed_time: 16267.50  processed: 10.0%  loss=0.336588  acc=0.89967
+elapsed_time: 16401.79  processed: 20.0%  loss=0.339022  acc=0.89925
+elapsed_time: 16535.95  processed: 30.0%  loss=0.329093  acc=0.90228
+elapsed_time: 16670.23  processed: 40.0%  loss=0.324411  acc=0.90250
+elapsed_time: 16804.29  processed: 50.0%  loss=0.328910  acc=0.90193
+elapsed_time: 16937.22  processed: 60.0%  loss=0.321953  acc=0.90339
+elapsed_time: 17067.41  processed: 70.0%  loss=0.323290  acc=0.90307
+elapsed_time: 17197.58  processed: 80.0%  loss=0.321294  acc=0.90296
+elapsed_time: 17327.72  processed: 90.0%  loss=0.317886  acc=0.90413
+elapsed_time: 17457.99  processed: 100.0%  loss=0.315269  acc=0.90442
+epoch= 14
+elapsed_time: 17588.04  processed: 10.0%  loss=0.309653  acc=0.90350
+elapsed_time: 17718.21  processed: 20.0%  loss=0.303189  acc=0.90758
+elapsed_time: 17848.29  processed: 30.0%  loss=0.302198  acc=0.90767
+elapsed_time: 17978.36  processed: 40.0%  loss=0.310390  acc=0.90546
+elapsed_time: 18108.39  processed: 50.0%  loss=0.304324  acc=0.90713
+elapsed_time: 18238.37  processed: 60.0%  loss=0.299875  acc=0.90867
+elapsed_time: 18368.17  processed: 70.0%  loss=0.298101  acc=0.90917
+elapsed_time: 18498.11  processed: 80.0%  loss=0.295403  acc=0.91040
+elapsed_time: 18627.95  processed: 90.0%  loss=0.293329  acc=0.91070
+elapsed_time: 18757.94  processed: 100.0%  loss=0.296071  acc=0.90982
+epoch= 15
+elapsed_time: 18887.98  processed: 10.0%  loss=0.269307  acc=0.92017
+elapsed_time: 19017.94  processed: 20.0%  loss=0.310414  acc=0.90658
+elapsed_time: 19147.96  processed: 30.0%  loss=0.302777  acc=0.90944
+elapsed_time: 19277.93  processed: 40.0%  loss=0.296956  acc=0.91050
+elapsed_time: 19407.90  processed: 50.0%  loss=0.298488  acc=0.90920
+elapsed_time: 19537.93  processed: 60.0%  loss=0.296208  acc=0.91033
+elapsed_time: 19667.78  processed: 70.0%  loss=0.291393  acc=0.91198
+elapsed_time: 19797.73  processed: 80.0%  loss=0.298490  acc=0.91006
+elapsed_time: 19927.65  processed: 90.0%  loss=0.296449  acc=0.91081
+elapsed_time: 20057.53  processed: 100.0%  loss=0.294929  acc=0.91093
+epoch= 16
+elapsed_time: 20187.68  processed: 10.0%  loss=0.256615  acc=0.91883
+elapsed_time: 20317.53  processed: 20.0%  loss=0.252707  acc=0.92267
+elapsed_time: 20447.32  processed: 30.0%  loss=0.266556  acc=0.91989
+elapsed_time: 20577.18  processed: 40.0%  loss=0.287658  acc=0.91350
+elapsed_time: 20706.98  processed: 50.0%  loss=0.281317  acc=0.91477
+elapsed_time: 20836.88  processed: 60.0%  loss=0.287380  acc=0.91269
+elapsed_time: 20966.74  processed: 70.0%  loss=0.283387  acc=0.91448
+elapsed_time: 21096.49  processed: 80.0%  loss=0.282247  acc=0.91440
+elapsed_time: 21226.30  processed: 90.0%  loss=0.282728  acc=0.91441
+elapsed_time: 21356.16  processed: 100.0%  loss=0.282066  acc=0.91445
+epoch= 17
+elapsed_time: 21486.02  processed: 10.0%  loss=0.298358  acc=0.90933
+elapsed_time: 21615.89  processed: 20.0%  loss=0.285303  acc=0.91358
+elapsed_time: 21745.83  processed: 30.0%  loss=0.283975  acc=0.91172
+elapsed_time: 21875.64  processed: 40.0%  loss=0.286635  acc=0.91063
+elapsed_time: 22005.35  processed: 50.0%  loss=0.282146  acc=0.91203
+elapsed_time: 22134.98  processed: 60.0%  loss=0.284577  acc=0.91150
+elapsed_time: 22264.75  processed: 70.0%  loss=0.283334  acc=0.91245
+elapsed_time: 22394.48  processed: 80.0%  loss=0.283654  acc=0.91235
+elapsed_time: 22524.21  processed: 90.0%  loss=0.285052  acc=0.91209
+elapsed_time: 22654.00  processed: 100.0%  loss=0.282968  acc=0.91288
+epoch= 18
+elapsed_time: 22783.73  processed: 10.0%  loss=0.257880  acc=0.91900
+elapsed_time: 22913.58  processed: 20.0%  loss=0.283873  acc=0.91133
+elapsed_time: 23043.48  processed: 30.0%  loss=0.276188  acc=0.91494
+elapsed_time: 23173.26  processed: 40.0%  loss=0.273737  acc=0.91633
+elapsed_time: 23303.17  processed: 50.0%  loss=0.276080  acc=0.91567
+elapsed_time: 23432.77  processed: 60.0%  loss=0.272297  acc=0.91683
+elapsed_time: 23562.59  processed: 70.0%  loss=0.272972  acc=0.91664
+elapsed_time: 23692.19  processed: 80.0%  loss=0.275452  acc=0.91579
+elapsed_time: 23821.92  processed: 90.0%  loss=0.274914  acc=0.91606
+elapsed_time: 23951.66  processed: 100.0%  loss=0.274500  acc=0.91597
+epoch= 19
+elapsed_time: 24081.38  processed: 10.0%  loss=0.259609  acc=0.92050
+elapsed_time: 24211.03  processed: 20.0%  loss=0.256918  acc=0.92192
+elapsed_time: 24340.72  processed: 30.0%  loss=0.264738  acc=0.92011
+elapsed_time: 24470.48  processed: 40.0%  loss=0.272709  acc=0.91767
+elapsed_time: 24600.13  processed: 50.0%  loss=0.267018  acc=0.91880
+elapsed_time: 24729.84  processed: 60.0%  loss=0.268103  acc=0.91886
+elapsed_time: 24859.49  processed: 70.0%  loss=0.271755  acc=0.91729
+elapsed_time: 24989.42  processed: 80.0%  loss=0.275086  acc=0.91575
+elapsed_time: 25119.17  processed: 90.0%  loss=0.271779  acc=0.91719
+elapsed_time: 25248.86  processed: 100.0%  loss=0.272159  acc=0.91720
+epoch= 20
+elapsed_time: 25378.64  processed: 10.0%  loss=0.287987  acc=0.91133
+elapsed_time: 25508.30  processed: 20.0%  loss=0.274233  acc=0.91258
+elapsed_time: 25638.03  processed: 30.0%  loss=0.269063  acc=0.91433
+elapsed_time: 25767.77  processed: 40.0%  loss=0.265675  acc=0.91617
+elapsed_time: 25897.46  processed: 50.0%  loss=0.270023  acc=0.91447
+elapsed_time: 26027.04  processed: 60.0%  loss=0.267674  acc=0.91542
+elapsed_time: 26156.67  processed: 70.0%  loss=0.271569  acc=0.91464
+elapsed_time: 26286.43  processed: 80.0%  loss=0.269687  acc=0.91575
+elapsed_time: 26416.07  processed: 90.0%  loss=0.267459  acc=0.91702
+elapsed_time: 26545.80  processed: 100.0%  loss=0.267719  acc=0.91710
+Test accuracy = 0.9248
