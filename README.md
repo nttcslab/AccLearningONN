@@ -18,7 +18,7 @@ The codes are implemented with PyTorch 1.7.0 and later.
 
 ## Quick start
 1. Execute rnn.py by ``python rnn.py``<br>
-  ``rnn.py``: Elamn-type <a href="./Images/rnn.png" width="50%" target="_blank">RNN</a> whose hidden unit is PSDC-based optical unit<br>
+  ``rnn.py``: Elman-type <a href="./Images/rnn.png" width="50%" target="_blank">RNN</a> whose hidden unit is PSDC-based optical unit<br>
 where its hidden size (dimensionality) is only **32** and the number of fine layers is **four**.<br>
 	<img src="./Images/rnn.png" width="50%">  
   If you fail to load the MNIST database in your first execution, 
