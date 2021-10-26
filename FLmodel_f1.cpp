@@ -591,18 +591,20 @@ torch::Tensor forwardmodReLU(
 	const int nSamples = input_a.size(1);
 	auto output = torch::empty({nFeatures,nSamples},c10::kComplexFloat);
 	auto output_a = output.accessor<c10::complex<float>,2>();
-	const float eps = 0.001; // epsilon: Magic number
+	const float eps = 1e-5; // epsilon: Magic number
 
 	at::parallel_for(0, nFeatures, 0, [&](int64_t start, int64_t end){
 		for(int64_t h = start; h < end; ++h){
 			c10::complex<float> incmplx = 0;
 			float norm = 0, scale = 0;
 			float bias_h = bias_a[h];
+			float bias_h_eps = bias_h -eps;
 			for(int s = 0; s < nSamples; ++s){
 				incmplx = input_a[h][s];
-				norm = std::abs(incmplx) +eps;
-				scale = 1.0f +bias_h/norm;				
-				output_a[h][s] = (scale >= 0) ? incmplx*scale : 0;
+				//norm = std::abs(incmplx);
+				norm = sqrt((incmplx*conj(incmplx)).real());
+				scale = 1.0f +bias_h_eps/(norm +eps);
+				output_a[h][s] = (norm+bias_h >= 0) ? incmplx*scale : 0;
 			}
 		}
 	});
@@ -623,23 +625,29 @@ std::vector<at::Tensor> backwardmodReLU(
 	auto grad_input_a = grad_input.accessor<c10::complex<float>,2>();
 	auto grad_bias = torch::zeros(nFeatures,at::kFloat);
 	auto grad_bias_a = grad_bias.accessor<float,1>();
-	const float eps = 0.001; // epsilon: Magic number
+	const float eps = 1e-5; // epsilon: Magic number
 
 	at::parallel_for(0, nFeatures, 0, [&](int64_t start, int64_t end){
 		for(int64_t h = start; h < end; ++h){
 			float bias_h = bias_a[h];
+			float bias_h_eps = bias_h -eps;
 			float gbias = 0;
-			float inv_norm = 0, scale = 0;
+			float norm = 0, inv_norm_eps = 0;
+			float factor = 0, scale = 0;
 			c10::complex<float> incmplx = 0;
 			c10::complex<float> gout = 0;
 			for(int s = 0; s < nSamples; ++s){
 				incmplx = input_a[h][s];
-				inv_norm = 1.0f/(std::abs(incmplx) +eps);
-				scale = 1.0f +bias_h*inv_norm;				
+				//norm = std::abs(incmplx); 
+				norm = sqrt((incmplx*conj(incmplx)).real()); 
+				inv_norm_eps = 1.0f/(norm +eps);
+				//factor = 0.5f*bias_h_eps*inv_norm_eps;
+				//scale = 1.0f +factor*(1.0f +eps*inv_norm_eps) ;				
+				scale = 1.0f +bias_h_eps*inv_norm_eps -0.5f*bias_h_eps*norm*inv_norm_eps*inv_norm_eps;
 				gout = grad_output_a[h][s];
-				if(scale >= 0){
+				if(norm +bias_h >= 0){
 					grad_input_a[h][s] = scale*gout;
-					gbias += 2.0f*inv_norm*(gout*conj(incmplx)).real();
+					gbias += 2.0f*inv_norm_eps*(gout*conj(incmplx)).real();
 				}else{
 					grad_input_a[h][s] = 0.0;
 				}
@@ -649,7 +657,6 @@ std::vector<at::Tensor> backwardmodReLU(
 	});
 	return {grad_input, grad_bias};
 }
-
 
 // (Complex) Diagonal unitary matrix 
 torch::Tensor forwardCDiag1(
